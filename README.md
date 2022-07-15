@@ -9,7 +9,7 @@
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=BorgwardtLab.torch-pdb)
 
 
-![](images/torch-pdb.png)
+![](images/torch-pdb_gh.png)
 
 # `torch-pdb`: the largest repository of ML-ready protein 3D structure datasets
 
