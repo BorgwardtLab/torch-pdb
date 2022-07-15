@@ -42,6 +42,8 @@ for org in AF_DATASET_NAMES.keys():
 print(f"TOTAL RCSB: {len(unique_pdbs)}")
 print(f"TOTAL AF: {len(unique_af)}")
 
+print("="*30)
+
 df = pd.DataFrame(rows)
 md = df.to_markdown(index=False)
 tx = df.to_latex(index=False)
