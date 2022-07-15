@@ -274,9 +274,10 @@ class TorchPDBDataset():
         dict
             A dictionary of summary statistics of this dataset.
         """
-        n_resi = len(self.data.residue_index) / len(self.data.ID)
+        N = len(self.proteins)
+        n_resi = sum((len(p['residue_index']) for p in self.proteins)) / N
         data = {'name': type(self).__name__,
-                'num_proteins': len(self),
+                'num_proteins': N,
                 'avg size (# residues)': n_resi
                }
         return data

@@ -29,7 +29,7 @@ We welcome contributions and bug reports through issues and pull requests.
 Who is torch-pdb for?
 ---------------------
 
-``torch-pdb`` is intended for computational biologists and machine learning resarchers who need quick access to ML-ready curated datasets. To our knowledge, this is the largest repository of stready to use datasets with rich property annotations. Going beyond experimental structures, this is also making AlphaFold predicted structures for SwissProt and over a dozen organism proteomes. 
+``torch-pdb`` is intended for computational biologists and machine learning resarchers who need quick access to ML-ready curated datasets. To our knowledge, this is the largest repository of ready-to-use datasets with rich property annotations. Going beyond experimental structures, we are also hosting datasets built on AlphaFold structures for SwissProt and over a dozen proteomes. 
 
 .. toctree::
    :glob:
