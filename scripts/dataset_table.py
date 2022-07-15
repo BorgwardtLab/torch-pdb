@@ -17,18 +17,24 @@ datasets = [
             ]
 
 rows = []
+
+unique_pdbs = set()
 for i, dataset in enumerate(datasets):
     with tempfile.TemporaryDirectory() as tmp:
         ds = dataset(root=tmp)
+        # unique_pdbs |= {p.name for p in ds}
         desc = ds.describe()
         rows.append(desc)
 
+print(f"TOTAL PDB : {len(unique_pdbs)}")
+unique_af = set()
 # do alphafold seaprately
 for org in AF_DATASET_NAMES.keys():
     print(org)
     with tempfile.TemporaryDirectory() as tmp:
-        af_all = AlphaFoldDataset(root=tmp, organism=org)
-        desc = af_all.describe()
+        ds = AlphaFoldDataset(root=tmp, organism=org)
+        unique_pdbs |= {p.name for p in ds}
+        desc = ds.describe()
         desc['name'] += f'_{org}'
         print(desc)
         rows.append(desc)
@@ -39,6 +45,7 @@ for org in AF_DATASET_NAMES.keys():
     print()
     print(tx)
 
+print(f"TOTAL AF: {len(unique_af)}")
 
 df = pd.DataFrame(rows)
 md = df.to_markdown(index=False)
